@@ -1,6 +1,9 @@
 # Load R's "USPersonalExpenditure" dataset using the "data()" function
 # This will produce a data frame called `USPersonalExpenditure`
-
+data("USPersonalExpenditure") #
+is.data.frame("USPersonalExpenditure")
+my.data <- data.frame(USPersonalExpenditure)
+View(my.data)
 
 # The variable USPersonalExpenditure is now accessible to you. Unfortunately,
 # it's not a data frame (it's actually what is called a matrix)
@@ -13,19 +16,20 @@
 
 
 # What are the column names of your dataframe?
-
+col.names <- colnames(my.data)
 
 # Why are they so strange? Think about whether you could use a number like 1940
 # with dollar notation!
+my.data&x1940
 
 # What are the row names of your dataframe?
-
+row.names <- rownames(my.data)
 
 # Create a column "category" that is equal to your rownames
-
+my.data$category <- row.names
 
 # How much money was spent on personal care in 1940?
-
+my.data["Personal Care", "X1940"]
 
 # How much money was spent on Food and Tobacco in 1960?
 
